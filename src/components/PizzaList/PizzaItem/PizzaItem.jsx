@@ -27,17 +27,18 @@ function PizzaItem(props) {
     }
 
     return(
-        <div className="grid grid-cols-1 border-4 mb-8">
+        <div className="grid grid-cols-1 border-4 m-4">
             
             <div className="flex flex-col justify-center">
                 <img className="h-auto pb-4"src={pizza.image_path}/>
                 
                 <h2 className="text-2xl">{pizza.name}</h2>
                 <p className="text-sm text-center m-auto">{pizza.description}</p>
-                <p className="text-right m-auto">${pizza.price}</p>
+                <p className="text-right m-auto p-4">${pizza.price}</p>
                 
                 <button 
-                className="w-1/2 ml-auto mr-auto text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" 
+                className={!isInCart ? "w-1/2 ml-auto mr-auto text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" :
+                     "w-1/2 ml-auto mr-auto text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"}
                 onClick={handleAddRemovePizza}>{!isInCart ? 'Add' : 'Remove'}
                 </button>
             </div>
