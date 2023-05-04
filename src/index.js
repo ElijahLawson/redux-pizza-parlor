@@ -18,6 +18,16 @@ const pizzas = (state=[], action) => {
     }
 }
 
+// need reducer for current customer
+const currentCustomer = (state={}, action) => {
+    switch (action.type) {
+        case 'CREATE_CUSTOMER':
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
 const orders = (state=[], action) => {
     return state;
 }
@@ -35,7 +45,7 @@ const cart = (state=[], action) => {
 
 //Redux Store
 const store = createStore(
-    combineReducers({pizzas, orders, cart}),
+    combineReducers({pizzas, orders, cart, currentCustomer}),
     applyMiddleware(logger)
 )
 
