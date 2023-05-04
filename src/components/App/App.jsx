@@ -10,10 +10,13 @@ function App() {
     getPizzas()
   }, [])
 
+  //Redux Dispatcher
   const dispatch = useDispatch();
 
+  //Redux Global State
   const pizzas = useSelector(store => store.pizzas);
-  console.log(pizzas);
+
+  //Axios GET request to /api/pizzas for pizza data from database
   const getPizzas = () => {
     axios({
       method: 'GET',

@@ -19,7 +19,6 @@ const pizzas = (state=[], action) => {
 }
 
 const orders = (state=[], action) => {
-
     return state;
 }
 
