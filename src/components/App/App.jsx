@@ -4,9 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import './App.css';
 
-//TEMP IMPORT
-import OrderPage from '../OrderPage/OrderPage';
-
 function App() {
 
   useEffect(() => {
@@ -45,8 +42,6 @@ function App() {
       <h2>Pizza is great.</h2>
 
 
-      {/* //TEMPORARY ORDER OrderPage */}
-      <OrderPage />
     </div>
   );
 }
