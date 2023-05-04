@@ -32,9 +32,20 @@ const orders = (state=[], action) => {
     return state;
 }
 
+const cart = (state=[], action) => {
+    switch (action.type) {
+        case 'ADD_CART_PIZZA':
+            return [...state, action.payload];
+        case 'REMOVE_CART_PIZZA':
+            return state.filter(item => item !== action.payload);
+        default:
+            return state
+    }
+}
+
 //Redux Store
 const store = createStore(
-    combineReducers({pizzas, orders, currentCustomer}),
+    combineReducers({pizzas, orders, cart, currentCustomer}),
     applyMiddleware(logger)
 )
 
