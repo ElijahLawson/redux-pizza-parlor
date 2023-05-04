@@ -41,8 +41,8 @@ function App() {
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
   
-      <img src='images/pizza_photo.png' />
-      <p>Pizza is great.</p>
+      {/* <img src='images/pizza_photo.png' /> */}
+      <h2>Pizza is great.</h2>
 
 
       {/* //TEMPORARY ORDER OrderPage */}

@@ -6,7 +6,7 @@ function PizzaList() {
     const pizzas = useSelector(store => store.pizzas);
     console.log(pizzas)
     return(
-        <div>
+        <div className="grid grid-cols-3 gap-4">
             {pizzas.map(pizza => {
                 return(
                     <PizzaItem 
