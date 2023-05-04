@@ -16,6 +16,7 @@ Tasks:
    - Not in the navigation bar.
    - Display orders (admin table???)
 
+
 COMPONENTS:
  - Layout
    - Header
@@ -30,3 +31,18 @@ COMPONENTS:
    - CustomerOrderTable
  - Admin Page
    - OrderHistoryTable
+
+
+REDUX REDUCERS:
+- Pizza
+- Orders
+
+
+BRANCHING TEAMS & PLAN:
+ - Order page - PizzaList and PizzaItem component -> one group (Vang, Luis, Eli)
+   - Customer Info Page & Customer Form Component -> one group (Anders, Mandi)
+
+ - Once we get both of those worked out:
+   - we gather back
+     - one group does checkout page
+     - one group does admin page
