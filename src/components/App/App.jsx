@@ -4,6 +4,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import './App.css';
 
+//TEMP IMPORT
+import OrderPage from '../OrderPage/OrderPage';
+
 function App() {
 
   useEffect(() => {
@@ -40,7 +43,10 @@ function App() {
   
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
-  
+
+
+      {/* //TEMPORARY ORDER OrderPage */}
+      <OrderPage />
     </div>
   );
 }
