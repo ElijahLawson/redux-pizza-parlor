@@ -1,8 +1,32 @@
 import React from 'react';
 import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import './App.css';
 
 function App() {
+
+  useEffect(() => {
+    getPizzas()
+  }, [])
+
+  const dispatch = useDispatch();
+
+  const pizzas = useSelector(store => store.pizzas);
+  console.log(pizzas);
+  const getPizzas = () => {
+    axios({
+      method: 'GET',
+      url: '/api/pizza'
+    }).then(response => {
+      dispatch({
+        type: 'SET_PIZZAS',
+        payload: response.data
+      })
+    }).catch(error => {
+        console.log('The axios get request to /api/pizza failed :(')
+    })
+  }
 
   return (
     <div className='App'>
