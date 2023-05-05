@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import './CustomerForm.css'; 
 
 function CustomerForm() {
     const [nameInput, setNameInput] = useState('');
@@ -39,47 +40,51 @@ function CustomerForm() {
     // onSubmit={(event) => {handleSubmit()
     return (
         <form onSubmit={handleSubmit}>
-            <input 
-                placeholder="name" 
-                value={nameInput}
-                onChange={(event) => {setNameInput(event.target.value)}}
-            />
-            <input 
-                placeholder="street address" 
-                value={addressInput}
-                onChange={(event) => {setAddressInput(event.target.value)}}
-            />
-            <input 
-                placeholder="city" 
-                value={cityInput}
-                onChange={(event) => {setCityInput(event.target.value)}}
-            /> 
-            <input 
-                placeholder="zip" 
-                value={zipInput}
-                onChange={(event) => {setZipInput(event.target.value)}}
-            />
+            <div className="input-flds">
+                <input 
+                    placeholder="name" 
+                    value={nameInput}
+                    onChange={(event) => {setNameInput(event.target.value)}}
+                />
+                <input 
+                    placeholder="street address" 
+                    value={addressInput}
+                    onChange={(event) => {setAddressInput(event.target.value)}}
+                />
+                <input 
+                    placeholder="city" 
+                    value={cityInput}
+                    onChange={(event) => {setCityInput(event.target.value)}}
+                /> 
+                <input 
+                    placeholder="zip" 
+                    value={zipInput}
+                    onChange={(event) => {setZipInput(event.target.value)}}
+                />
+            </div>
             {/* vvvv NEED ALERT TO MAKE SURE USER PICKS DELIVERY OPTION vvvv */}
-            <input 
-                type='radio'
-                name='order-method'
-                value='pickup'
-                id='pickup'
-                checked={orderMethod === 'pickup'}
-                onChange={(event) => {setOrderMethod(event.target.value)}}
-            />
-            <label>Pickup</label>
-            <input 
-                type='radio'
-                name='order-method'
-                value='delivery'
-                id='delivery'
-                checked={orderMethod === 'delivery'}
-                onChange={(event) => {setOrderMethod(event.target.value)}}
-            />
-            <label>Delivery</label>
-            {/* vvvvv THIS IS A PLACEHOLDER FOR NOW vvvv */}
-            <button type='submit'>NEXT</button>
+            <div className="radio-btns">
+                <input 
+                    type='radio'
+                    name='order-method'
+                    value='pickup'
+                    id='pickup'
+                    checked={orderMethod === 'pickup'}
+                    onChange={(event) => {setOrderMethod(event.target.value)}}
+                />
+                <label>Pickup</label>
+                <input 
+                    type='radio'
+                    name='order-method'
+                    value='delivery'
+                    id='delivery'
+                    checked={orderMethod === 'delivery'}
+                    onChange={(event) => {setOrderMethod(event.target.value)}}
+                />
+                <label>Delivery</label>
+                {/* vvvvv THIS IS A PLACEHOLDER FOR NOW vvvv */}
+                <button type='submit'>NEXT</button>
+            </div>
         </form>
     )
 }

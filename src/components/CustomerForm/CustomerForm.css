@@ -1,0 +1,15 @@
+form > div {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+}
+
+.input-flds {
+    margin: 40px;
+    width: 50px;
+}
+
+.radio-btns {
+    margin: 20px;
+}
+
